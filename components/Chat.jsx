@@ -104,7 +104,7 @@ function Chat() {
   }, [messages]);
 
   return (
-    <div className="flex h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="flex h-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Sidebar */}
       <div className="w-1/4 bg-white/5 backdrop-blur-xl border-r border-white/10">
         {/* Header */}
@@ -130,7 +130,7 @@ function Chat() {
         </div>
 
         {/* Users List */}
-        <div className="overflow-y-auto h-full pb-20">
+        <div className="overflow-y-auto h-[calc(100%-108px)]"> {/* Subtracting header height */}
           {filteredUsers.map(user => (
             <button
               key={user.id}
@@ -166,7 +166,7 @@ function Chat() {
       </div>
 
       {/* Main Chat Area */}
-      <div className="flex-1 flex h-screen flex-col">
+      <div className="flex-1 flex flex-col">
         {selectedUser ? (
           <>
             {/* Chat Header */}

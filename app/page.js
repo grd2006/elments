@@ -13,16 +13,13 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <main className="h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
       {/* Header */}
       <div className="bg-white/5 backdrop-blur-xl border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
-                <span className="text-white font-bold text-lg">E</span>
-              </div>
-              <h1 className="text-3xl font-bold text-white">Elements</h1>
+              <h1 className="text-3xl font-bold text-white">Elments</h1>
             </div>
             
             <div className="flex items-center gap-4">
@@ -47,8 +44,10 @@ export default function Home() {
         </div>
       </div>
       
-      {/* Chat Component */}
+      {/* Chat Component - Add a wrapper with calculated height */}
+      <div className="h-[calc(100vh-80px)]"> {/* Subtracting header height */}
         <Chat />
+      </div>
     </main>
   );
 }
